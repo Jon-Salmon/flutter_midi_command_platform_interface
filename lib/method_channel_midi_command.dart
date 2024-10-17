@@ -40,6 +40,15 @@ class MethodChannelMidiCommand extends MidiCommandPlatform {
     return ports.toList(growable: false);
   }
 
+  @override
+  Future<void> setup() async {
+    try {
+      await _methodChannel.invokeMethod('setup');
+    } on PlatformException catch (e) {
+      throw e.message!;
+    }
+  }
+
   /// Starts bluetooth subsystem.
   ///
   /// Shows an alert requesting access rights for bluetooth.

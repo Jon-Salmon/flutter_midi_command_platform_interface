@@ -36,6 +36,10 @@ abstract class MidiCommandPlatform extends PlatformInterface {
     throw UnimplementedError('get devices has not been implemented.');
   }
 
+  Future<void> setup() async {
+    throw UnimplementedError('setup() has not been implemented.');
+  }
+
   /// Starts bluetooth subsystem. Shows an alert requesting access rights for
   /// bluetooth.
   Future<void> startBluetoothCentral() async {
